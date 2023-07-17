@@ -95,3 +95,29 @@
     position: fixed;
     bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .menu__text--profile {
+        display: none;
+    }
+    .container {
+        width: 90%;
+    }
+    .title {
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+    mat-icon {
+        width: 45px;
+    }
+    .no-content__text {
+        gap: 1rem
+    }
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        font-size: 1rem;
+    }
+}
