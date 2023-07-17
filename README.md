@@ -72,7 +72,6 @@ Así se encuentra organizado el proyecto en cuestión.
 │   ├───📄 index.html
 │   ├───📄 main.ts
 │   └───📄 styles.scss
-├───📄 .editorconfig
 ├───📄 angular.json
 ├───📄 package-lock.json
 ├───📄 package.json
