@@ -1,0 +1,64 @@
+<mat-toolbar color="primary" class="menu">
+    <span>{{ title }}</span>
+    <span class="example-spacer"></span>
+    <div class="menu__text">
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="">
+      <mat-icon>favorite</mat-icon>
+   </button>
+        <button mat-icon-button class="example-icon" aria-label="">
+     <mat-icon>share</mat-icon>
+   </button>
+        <div class="menu__text menu__text--profile">
+            <button mat-icon-button aria-label="">
+            <mat-icon class="example-icon">
+                sentiment_satisfied</mat-icon>
+              </button> Fabrizio Ferroni
+        </div>
+    </div>
+</mat-toolbar>
+
+<h1 class="title">Trabajo práctico de Angular Santex</h1>
+
+<div class="container pt-2 pb-2">
+    <button (click)="switchData()" mat-flat-button color="primary" class="mb-2"> {{ showTable ? 'Ocultar datos' : 'Mostrar datos' }} </button>
+
+    <div class="mat-elevation-z8 mb-2">
+        <table mat-table [dataSource]="dataSource" *ngIf="showTable">
+            <!-- Id Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Id. </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Nombre Column -->
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+
+            <!-- Costo Column -->
+            <ng-container matColumnDef="costo">
+                <th mat-header-cell *matHeaderCellDef> Costo </th>
+                <td mat-cell *matCellDef="let element"> $ {{ element.costo | currency:'':'':'1.0-2'}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+    <div *ngIf="!showTable" class="no-content">
+        <div class="no-content__text">
+            <mat-icon class="no-content__icon">warning</mat-icon> No hay productos para mostrar en estos momentos.
+        </div>
+    </div>
+</div>
+
+<mat-toolbar color="primary" class="menu footer {{ showTable ? '' : 'f-no-content' }} ">
+    <span>&copy; {{ year }} Todos los derechos reservados. </span>
+    <span class="example-spacer"></span>
+    <div class="footer__text">
+        Hecho con
+        <mat-icon class="footer__icon">favorite</mat-icon> por <a href="https://fabriziodev.ar" rel="noreferrer noopener nofollow" class="footer__enlace" target="blank">Fabrizio Dev</a>
+    </div>
+</mat-toolbar>
