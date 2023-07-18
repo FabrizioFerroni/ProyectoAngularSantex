@@ -9,7 +9,7 @@ export class ProductService {
   url!: string;
 
   constructor(private http: HttpClient) {
-    this.url = 'https://dummyjson.com/products';
+    this.url = 'https://dummyjson.com/products?limit=100';
   }
 
   getAll(): Observable<any> {
