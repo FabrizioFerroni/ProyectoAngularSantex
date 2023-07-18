@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { NumberceroPipe } from './pipe/numbercero.pipe';
 
 // Angular material design
 import { MatIconModule } from '@angular/material/icon';
@@ -14,10 +15,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 registerLocaleData(localeEs, 'es');
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NumberceroPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,7 +29,9 @@ registerLocaleData(localeEs, 'es');
     MatIconModule,
     MatCardModule,
     MatTableModule,
+    MatPaginatorModule,
     CommonModule,
+    HttpClientModule,
   ],
   providers: [
     {
